@@ -1,16 +1,21 @@
 resource "aws_db_instance" "postgres" {
-  allocated_storage    = 20
+  allocated_storage    = var.db_allocated_storage
   engine               = "postgres"
-  engine_version       = "13.4" # Escolha a versão desejada
-  instance_class       = "db.t3.micro" # Escolha a classe de instância
-  name                 = "fastfooddb"
-  username             = "admin"
-  password             = "password"
-  parameter_group_name = "default.postgres13"
+  engine_version       = "14.5" # Substitua pela versão desejada
+  instance_class       = var.db_instance_class
+  name                 = var.db_name
+  username             = var.db_username
+  password             = var.db_password
+  vpc_security_group_ids = var.vpc_security_group_ids
+  db_subnet_group_name = aws_db_subnet_group.postgres_subnet_group.name
   skip_final_snapshot  = true
+  publicly_accessible  = false
+}
 
-  # Configuração de rede
-  publicly_accessible = true
-  vpc_security_group_ids = [aws_security_group.rds_sg.id]
-  db_subnet_group_name   = aws_db_subnet_group.rds_subnet_group.name
+resource "aws_db_subnet_group" "postgres_subnet_group" {
+  name       = "postgres-subnet-group"
+  subnet_ids = var.db_subnet_ids
+  tags = {
+    Name = "postgres-subnet-group"
+  }
 }
