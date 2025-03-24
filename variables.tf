@@ -3,7 +3,9 @@ variable "aws_region" {
 }
 
 variable "db_name" {
-  default = "fastfood_db"
+  description = "Nome do banco de dados PostgreSQL"
+  type        = string
+  default     = "fastfooddb" # Substitua pelo nome desejado
 }
 
 variable "db_username" {
@@ -27,11 +29,36 @@ variable "vpc_security_group_ids" {
   default = ["sg-0c52dcdb0a18aab05"] # Substitua pelo ID do Security Group
 }
 
-variable "db_subnet_ids" {
-  type = list(string)
-  default = [
-    "subnet-0da58b715c4447b40",
-    "subnet-0dc8c17af2d69e6c4",
-    "subnet-01e7d29bdec7e71dd"
-  ] # Substitua pelos IDs das subnets
+variable "subnetA" {
+  default = "subnet-0da58b715c4447b40"
+}
+
+variable "subnetB" {
+  default = "subnet-0dc8c17af2d69e6c4"
+}
+
+variable "subnetC" {
+  default = "subnet-01e7d29bdec7e71dd"
+}
+
+variable "sgId" {
+  default = "sg-0c52dcdb0a18aab05"
+}
+
+variable "db_engine_version" {
+  description = "The version of the database engine to use"
+  type        = string
+  default     = "13.3"
+}
+
+variable "db_parameter_group_name" {
+  description = "The name of the DB parameter group"
+  type        = string
+  default     = "default.postgres12"
+}
+
+variable "db_publicly_accessible" {
+  description = "Determines if the RDS instance is publicly accessible"
+  type        = bool
+  default     = false
 }
