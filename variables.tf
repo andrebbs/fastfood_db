@@ -1,32 +1,32 @@
 variable "aws_region" {
-  default = "us-east-1" # Substitua pela região desejada
+  default = "us-east-1" 
 }
 
 variable "db_name" {
   description = "Nome do banco de dados PostgreSQL"
   type        = string
-  default     = "fastfooddb" # Substitua pelo nome desejado
+  default     = "fastfooddb" 
 }
 
 variable "db_username" {
-  default = "admin"
+  default = "fastfood_admin"
 }
 
 variable "db_password" {
-  default = "securepassword" # Substitua por uma senha segura
+  default = "fastFood@2025" 
 }
 
 variable "db_instance_class" {
-  default = "db.t3.micro" # Tipo de instância do RDS
+  default = "db.t3.micro" 
 }
 
 variable "db_allocated_storage" {
-  default = 20 # Armazenamento em GB
+  default = 20 
 }
 
 variable "vpc_security_group_ids" {
   type = list(string)
-  default = ["sg-0c52dcdb0a18aab05"] # Substitua pelo ID do Security Group
+  default = ["sg-0c52dcdb0a18aab05"] 
 }
 
 variable "subnetA" {
