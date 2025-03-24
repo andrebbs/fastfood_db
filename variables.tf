@@ -48,7 +48,7 @@ variable "sgId" {
 variable "db_engine_version" {
   description = "The version of the database engine to use"
   type        = string
-  default     = "13.3"
+  default     = "14.17"
 }
 
 variable "db_parameter_group_name" {
