@@ -3,10 +3,9 @@ resource "aws_db_instance" "postgres" {
   engine                 = "postgres"
   engine_version         = var.db_engine_version
   instance_class         = var.db_instance_class
-  identifier             = "fastfooddb-instance"
-  name                   = var.db_name
-  username               = var.db_username
-  password               = var.db_password
+  identifier             = "fastfooddb-instance" # Identificador único da instância RDS
+  username               = var.db_username       # Nome de usuário mestre
+  password               = var.db_password       # Senha do usuário mestre
   parameter_group_name   = var.db_parameter_group_name
   publicly_accessible    = var.db_publicly_accessible
   vpc_security_group_ids = var.vpc_security_group_ids

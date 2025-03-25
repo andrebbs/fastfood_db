@@ -11,7 +11,7 @@ variable "db_name" {
 variable "db_username" {
   description = "Master username for the RDS instance"
   type        = string
-  default     = "fastfood_user_db" # Substitua por um nome válido
+  default     = "fastfood_user_db" 
 }
 
 variable "db_password" {
