@@ -64,3 +64,8 @@ variable "db_publicly_accessible" {
   type        = bool
   default     = false
 }
+
+variable "db_endpoint" {
+  description = "Endpoint do RDS"
+  type        = string
+}
