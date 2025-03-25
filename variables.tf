@@ -9,7 +9,7 @@ variable "db_name" {
 }
 
 variable "db_username" {
-  default = "fastfood_user" 
+  default = "fastfood_user"  
 }
 
 variable "db_password" {
