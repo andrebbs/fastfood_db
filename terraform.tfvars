@@ -1,6 +1,6 @@
 aws_region = "us-east-1"
 db_name = "fastfooddb"
-db_username = "fastfood-admin"
+db_username = "fastfood"
 db_password = "securepassword"
 db_instance_class = "db.t3.micro"
 db_allocated_storage = 20
