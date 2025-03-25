@@ -50,13 +50,13 @@ variable "sgId" {
 variable "db_engine_version" {
   description = "The version of the database engine to use"
   type        = string
-  default     = "14.17"
+  default     = "12.15" 
 }
 
 variable "db_parameter_group_name" {
   description = "The name of the DB parameter group"
   type        = string
-  default     = "default.postgres12"
+  default     = "default.postgres12" 
 }
 
 variable "db_publicly_accessible" {
